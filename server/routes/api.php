@@ -30,6 +30,8 @@ Route::group([
                                 return $request->user();
                          });
     
+    Route::put('/updateUsername', [AuthController::class, 'updateUsername']);
+
 });
 
 
