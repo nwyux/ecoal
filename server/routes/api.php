@@ -153,4 +153,13 @@ Route::group([
 
     Route::put('/updateUsername', [AuthController::class, 'updateUsername']);
     
+<<<<<<< HEAD
 });
+=======
+    Route::put('/updateUsername', [AuthController::class, 'updateUsername']);
+
+});
+
+
+
+>>>>>>> 78f3d6fb823b5371d601c52d7400aa205539f8c5
