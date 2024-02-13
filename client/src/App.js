@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import ArticleList from "./components/ArticleList";
+import Educate from "./pages/Educate";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/articles" element={<ArticleList />} />
         <Route path="/article/:id" element={<Article />} />
-
+        <Route path="/educate" element={<Educate/>}/>
       </Routes>
 
       <Footer />
