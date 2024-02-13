@@ -57,4 +57,16 @@ class AuthController extends Controller
         Auth::user()->tokens()->delete();
         return response()->json(["message" => "Logout."]);
     }
+
+    public function updateUsername(Request $request) {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        $user = Auth::user();
+        $user->name = $validatedData['name'];
+        $user->save();
+
+        return back()->with('message', 'Profile Updated');
+    }
 }

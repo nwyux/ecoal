@@ -93,7 +93,7 @@ export default function Navbar() {
             ref={menuRef}
             className={`${
               showMenu ? "translate-x-0" : "translate-x-full"
-            } fixed top-0 right-0 h-full font-alata bg-blanc text-noir w-3/5 max-w-xs flex flex-col justify-center items-center p-6 gap-4 transition-transform duration-200 border-l-2 border-noir`}
+            } fixed top-0 right-0 h-full font-alata bg-blanc opacity-95 text-noir w-full max-w-lg flex flex-col justify-center items-center p-6 gap-4 transition-transform duration-200 border-l-2 border-noir`}
           >
             <button
               className="absolute top-5 right-5 text-3xl font-bold"
@@ -112,12 +112,12 @@ export default function Navbar() {
             <hr className="w-3/5 bg-noir block h-0.5" />
             <NavLink
               to="/innovations"
-              className="text-noir hover:underline"
+              className="text-noir hover:underline text-xl"
               onClick={closeMenuOnClick}
             >
               Innovations
             </NavLink>
-            <hr className="w-3/5 bg-noir block h-0.5" />
+            <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
               to="/discover"
               className="text-noir hover:underline"
@@ -125,7 +125,7 @@ export default function Navbar() {
             >
               Discover
             </NavLink>
-            <hr className="w-3/5 bg-noir block h-0.5" />
+            <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
               to="/searchbarhere"
               className="text-noir hover:underline"
@@ -133,7 +133,7 @@ export default function Navbar() {
             >
               Searchbarhere
             </NavLink>
-            <hr className="w-3/5 bg-noir block h-0.5" />
+            <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
               to="/loginandregisterhere"
               className="text-noir hover:underline"
