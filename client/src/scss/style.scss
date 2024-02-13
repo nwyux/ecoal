@@ -1,0 +1,20 @@
+#footerID{
+    display: flex;
+    flex-direction: column;
+}
+#footerID a{
+    font-weight: normal;
+    width: 100%;
+    box-sizing: border-box;
+}
+#footerID a:hover{
+    font-weight: bold;
+}
+@media only screen and (min-width: 800px){
+    #footerID{
+        flex-direction: row;
+        a {
+            padding: 10px;
+        }
+    }
+}
