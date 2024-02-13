@@ -9,6 +9,7 @@ class Article extends Model
 {
     use HasFactory;
 
+    public $fillable = ['title', 'content' , 'thumbnailURL'];
 
     public function tags()
     {
