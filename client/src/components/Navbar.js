@@ -49,7 +49,7 @@ export default function Navbar() {
                 to="/comingsoon"
                 className="text-noir hover:underline"
               >
-                Coming soon
+                Educate
               </NavLink>
             </li>
             <li className="mr-6">
@@ -57,7 +57,7 @@ export default function Navbar() {
                 to="/sneakers"
                 className="text-noir hover:underline"
               >
-                Sneakers
+                Innovations
               </NavLink>
             </li>
             <li className="mr-6">
@@ -65,7 +65,7 @@ export default function Navbar() {
                 to="/promotions"
                 className="text-noir hover:underline"
               >
-                Promotions
+                Discover
               </NavLink>
             </li>
             <li className="mr-6">
@@ -73,7 +73,7 @@ export default function Navbar() {
                 to="/trending"
                 className="text-noir hover:underline"
               >
-                Trending
+                Browse
               </NavLink>
             </li>
           </ul>
