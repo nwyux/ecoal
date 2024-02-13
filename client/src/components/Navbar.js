@@ -139,35 +139,23 @@ export default function Navbar() {
           </Link>
           <ul className="flex text-noir lg:gap-12 font-alata items-center">
             <li className="mr-6">
-              <NavLink
-                to="/comingsoon"
-                className="text-noir hover:underline"
-              >
-                Coming soon
+              <NavLink to="/educate" className="text-noir hover:underline">
+                Educate
               </NavLink>
             </li>
             <li className="mr-6">
-              <NavLink
-                to="/sneakers"
-                className="text-noir hover:underline"
-              >
-                Sneakers
+              <NavLink to="/innovations" className="text-noir hover:underline">
+                Innovations
               </NavLink>
             </li>
             <li className="mr-6">
-              <NavLink
-                to="/promotions"
-                className="text-noir hover:underline"
-              >
-                Promotions
+              <NavLink to="/discover" className="text-noir hover:underline">
+                Discover
               </NavLink>
             </li>
             <li className="mr-6">
-              <NavLink
-                to="/trending"
-                className="text-noir hover:underline"
-              >
-                Trending
+              <NavLink to="/browse" className="text-noir hover:underline">
+                Browse
               </NavLink>
             </li>
           </ul>
@@ -199,12 +187,12 @@ export default function Navbar() {
 
             <NavLink
               to="/educate"
-              className="text-noir hover:underline"
+              className="text-noir hover:underline text-xl"
               onClick={closeMenuOnClick}
             >
               Educate
             </NavLink>
-            <hr className="w-3/5 bg-noir block h-0.5" />
+            <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
               to="/innovations"
               className="text-noir hover:underline text-xl"
@@ -215,27 +203,21 @@ export default function Navbar() {
             <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
               to="/discover"
-              className="text-noir hover:underline"
+              className="text-noir hover:underline text-xl"
               onClick={closeMenuOnClick}
             >
               Discover
             </NavLink>
             <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
-              to="/searchbarhere"
-              className="text-noir hover:underline"
+              to="/browse"
+              className="text-noir hover:underline text-xl"
               onClick={closeMenuOnClick}
             >
-              Searchbarhere
+              Browse
             </NavLink>
             <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
-            <NavLink
-              to="/loginandregisterhere"
-              className="text-noir hover:underline"
-              onClick={closeMenuOnClick}
-            >
-              loginandregisterhere
-            </NavLink> 
+            {isLoggedMobile()}
           </div>
         </div>
       </div>
