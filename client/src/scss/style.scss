@@ -1,0 +1,14 @@
+#footerID{
+    display: flex;
+    flex-direction:row;
+    a:hover{
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    #footerID{
+        display: flex;
+        flex-direction: column;
+    }
+}
