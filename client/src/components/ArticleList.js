@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 
 export default function ArticleList() {
     const [articles, ShowArticles] = useState([])
@@ -17,7 +17,7 @@ export default function ArticleList() {
       articles
       <div>
             {articles.map((article, i) => {
-              return <a href={`/article/` + article.id}>{article.title}</a>;
+              return <NavLink to={`/article/` + article.id}>{article.title}</NavLink>;
             })}
         </div>
     </div>
