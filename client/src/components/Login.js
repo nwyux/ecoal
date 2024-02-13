@@ -58,7 +58,7 @@ export default function Login() {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 <button
-                    className="w-full p-2 bg-vertfonce shadow-2xl text-blanc rounded-xl font-bold"
+                    className="w-full p-3 mt-6 bg-vertfonce shadow-2xl text-blanc rounded-xl font-bold"
                     onClick={login}
                     disabled={loading}
                 >
