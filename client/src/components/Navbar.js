@@ -10,23 +10,23 @@ export default function Navbar() {
   const [token, setUserToken] = useCookie("token", "0");
   const [data, setData] = useState(null);
 
-  async function getUser() {
-    // const response = (
-    //   await axios.get("http://127.0.0.1:8000/api/user", {
-    //     headers: { Authorization: "Bearer " + token },
-    //   })
-    // ).data;
-    // setData(response);
-  }
+  // async function getUser() {
+  //   // const response = (
+  //   //   await axios.get("http://127.0.0.1:8000/api/user", {
+  //   //     headers: { Authorization: "Bearer " + token },
+  //   //   })
+  //   // ).data;
+  //   // setData(response);
+  // }
 
-  console.log(token);
+  // console.log(token);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
   useEffect(() => {
-    getUser();
+    // getUser();
     const closeMenu = (event) => {
       if (
         showMenu &&

@@ -46,19 +46,19 @@ export default function Login() {
                   <input
                         type="email"
                         placeholder="Email"
-                        className="w-full p-2 mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
+                        className="w-full shadow-xl p-3 mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
                         type="password"
                         placeholder="Password"
-                        className="w-full p-2 mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
+                        className="w-full p-3 shadow-xl mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 <button
-                    className="w-full p-2 bg-vertfonce text-blanc rounded-xl font-bold"
+                    className="w-full p-2 bg-vertfonce shadow-2xl text-blanc rounded-xl font-bold"
                     onClick={login}
                     disabled={loading}
                 >
@@ -66,6 +66,10 @@ export default function Login() {
                 </button>
                 </form>
                 {error && <p className="text-red-500 mt-2">{error}</p>}
+                <div className="text-vertfonce flex gap-1 font-bold mt-4">
+                  <p>You don't have an account?</p>
+                  <NavLink to='/register' className="text-vert hover:underline">Register here</NavLink>
+                </div>
             </div>
         </div>
     )

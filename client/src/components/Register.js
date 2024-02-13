@@ -53,21 +53,21 @@ export default function Register() {
                     <input
                         type="text"
                         placeholder="Name"
-                        className="w-full p-2 mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
+                        className="w-full p-3 shadow-xl mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
                     <input
                         type="email"
                         placeholder="Email"
-                        className="w-full p-2 mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
+                        className="w-full p-3 shadow-xl mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
                         type="password"
                         placeholder="Password"
-                        className="w-full p-2 mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
+                        className="w-full p-2 shadow-2xl mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
@@ -79,6 +79,10 @@ export default function Register() {
                         Register
                     </button>
                 </form>
+                <div className="text-vertfonce flex gap-1 font-bold mt-4">
+                  <p>You already have an account?</p>
+                  <NavLink to='/login' className="text-vert hover:underline">Login here</NavLink>
+                </div>
             </div>
         </div>
     )
