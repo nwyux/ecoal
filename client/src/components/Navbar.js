@@ -46,42 +46,34 @@ export default function Navbar() {
           <ul className="flex text-noir lg:gap-12 font-alata items-center">
             <li className="mr-6">
               <NavLink
-                to="/educate"
+                to="/comingsoon"
                 className="text-noir hover:underline"
               >
-                Educate
+                Coming soon
               </NavLink>
             </li>
             <li className="mr-6">
               <NavLink
-                to="/innovations"
+                to="/sneakers"
                 className="text-noir hover:underline"
               >
-                Innovations
+                Sneakers
               </NavLink>
             </li>
             <li className="mr-6">
               <NavLink
-                to="/discover"
+                to="/promotions"
                 className="text-noir hover:underline"
               >
-                Discover
+                Promotions
               </NavLink>
             </li>
             <li className="mr-6">
               <NavLink
-                to="/searchbarhere"
+                to="/trending"
                 className="text-noir hover:underline"
               >
-                Searchbarhere
-              </NavLink>
-            </li>
-            <li className="mr-6">
-              <NavLink
-                to="/loginandregisterhere"
-                className="text-noir hover:underline"
-              >
-                loginandregisterhere
+                Trending
               </NavLink>
             </li>
           </ul>
