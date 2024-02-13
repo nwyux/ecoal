@@ -1,14 +1,20 @@
 #footerID{
     display: flex;
-    flex-direction:row;
-    a:hover{
-        font-weight: bold;
-    }
+    flex-direction: column;
 }
-
-@media only screen and (min-width: 600px){
+#footerID a{
+    font-weight: normal;
+    width: 100%;
+    box-sizing: border-box;
+}
+#footerID a:hover{
+    font-weight: bold;
+}
+@media only screen and (min-width: 800px){
     #footerID{
-        display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        a {
+            padding: 10px;
+        }
     }
 }

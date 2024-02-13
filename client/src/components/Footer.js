@@ -8,7 +8,7 @@ export default function Footer() {
         <NavLink to="/">Contact</NavLink>
         <NavLink to="/">Q&A</NavLink>
         <NavLink to="/">Terms & Condition</NavLink>
-        <NavLink to="/">@Copyright</NavLink>
+        <NavLink to="/">@Copyright Infiteam 2024</NavLink>
     </div>
   )
 }

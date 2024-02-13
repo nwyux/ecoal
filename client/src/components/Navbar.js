@@ -46,34 +46,42 @@ export default function Navbar() {
           <ul className="flex text-noir lg:gap-12 font-alata items-center">
             <li className="mr-6">
               <NavLink
-                to="/comingsoon"
+                to="/educate"
                 className="text-noir hover:underline"
               >
-                Coming soon
+                Educate
               </NavLink>
             </li>
             <li className="mr-6">
               <NavLink
-                to="/sneakers"
+                to="/innovations"
                 className="text-noir hover:underline"
               >
-                Sneakers
+                Innovations
               </NavLink>
             </li>
             <li className="mr-6">
               <NavLink
-                to="/promotions"
+                to="/discover"
                 className="text-noir hover:underline"
               >
-                Promotions
+                Discover
               </NavLink>
             </li>
             <li className="mr-6">
               <NavLink
-                to="/trending"
+                to="/searchbarhere"
                 className="text-noir hover:underline"
               >
-                Trending
+                Searchbarhere
+              </NavLink>
+            </li>
+            <li className="mr-6">
+              <NavLink
+                to="/loginandregisterhere"
+                className="text-noir hover:underline"
+              >
+                loginandregisterhere
               </NavLink>
             </li>
           </ul>
@@ -103,36 +111,44 @@ export default function Navbar() {
             </button>
 
             <NavLink
-              to="/comingsoon"
+              to="/educate"
               className="text-noir hover:underline"
               onClick={closeMenuOnClick}
             >
-              Coming soon
+              Educate
             </NavLink>
             <hr className="w-3/5 bg-noir block h-0.5" />
             <NavLink
-              to="/sneakers"
+              to="/innovations"
               className="text-noir hover:underline"
               onClick={closeMenuOnClick}
             >
-              Sneakers
+              Innovations
             </NavLink>
             <hr className="w-3/5 bg-noir block h-0.5" />
             <NavLink
-              to="/promotions"
+              to="/discover"
               className="text-noir hover:underline"
               onClick={closeMenuOnClick}
             >
-              Promotions
+              Discover
             </NavLink>
             <hr className="w-3/5 bg-noir block h-0.5" />
             <NavLink
-              to="/trending"
+              to="/searchbarhere"
               className="text-noir hover:underline"
               onClick={closeMenuOnClick}
             >
-              Trending
-            </NavLink>        
+              Searchbarhere
+            </NavLink>
+            <hr className="w-3/5 bg-noir block h-0.5" />
+            <NavLink
+              to="/loginandregisterhere"
+              className="text-noir hover:underline"
+              onClick={closeMenuOnClick}
+            >
+              loginandregisterhere
+            </NavLink> 
           </div>
         </div>
       </div>
