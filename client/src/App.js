@@ -11,7 +11,7 @@ import ArticleList from "./components/ArticleList";
 
 function App() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-blanc">
       <Navbar />
 
       <Routes>

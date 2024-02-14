@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { ArrowLeft } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
 export default function Article() {
     const { id } = useParams();
@@ -61,13 +62,13 @@ export default function Article() {
           } 
         }
 
-        content = content.replace(/\./g, '. <br> <br> <br>');
+        content = content.replace(/\./g, '. <br> <br>');
 
         return (
-          <div className='article'>
-            <h3>{title}</h3>
-            <img src={'http://localhost:8000/'+thumbnailURL} alt={title} />
-            <p dangerouslySetInnerHTML={{__html: content}}></p>
+          <div className='relative flex flex-col justify-center'>
+            <img className='opacity-65 py-4 w-96 sm:w-2/4 max-w-4xl m-auto' src={'http://localhost:8000/'+thumbnailURL} alt={title} />
+            <h3 className='font-bold text-xl uppercase text-center p-4'>{title}</h3>
+            <p className='text-md text-justify mx-4 sm:mx-48' dangerouslySetInnerHTML={{__html: content}}></p>
           </div>
         )
       }
@@ -77,11 +78,14 @@ export default function Article() {
       }
 
     return (
-        <div>
-            <h2>Article</h2>
-            <div className='container-articles'>
+        <div className='mt-28 mb-8 bg-blanc'>
+          <div className='flex flex-col mx-2 sm:mx-16 gap-2'>
+            <NavLink to='/articles' className='-ml-1 w-24'>
+            <ArrowLeft size={48} className='text-marron' />
+            </NavLink>
+            <h2 className='text-marron text-4xl font-bold'>Educate</h2>
+          </div>
             {data && showArticles(data.title, data.content, data.thumbnailURL, data.mediaURL, data.mediaType, data.id)}
-            </div>
         </div>
     )
 }

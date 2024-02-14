@@ -18,6 +18,7 @@ module.exports = {
       colors: {
         noir: '#131313',
         blanc: '#E9E5D6',
+        marron: '#362706',
         vert: '#ACB992',
         vertfonce: '#464E2E',
         moon: {

@@ -17,6 +17,15 @@ export default function Navbar() {
     setShowMenu(!showMenu);
   };
 
+  function logout() {
+    setUserToken('0');
+  }
+
+  function mobileLogout() {
+    closeMenuOnClick();
+    logout();
+  }
+
   useEffect(() => {
     const closeMenu = (event) => {
       if (
@@ -68,7 +77,7 @@ export default function Navbar() {
             </NavLink>
           </li>
           <li className="mr-6">
-            <NavLink to="/logout" className="text-noir hover:underline">
+            <NavLink to="/" onClick={logout} className="text-noir hover:underline">
               Logout
             </NavLink>
           </li>
@@ -110,9 +119,9 @@ export default function Navbar() {
           </NavLink>
           <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
           <NavLink
-            to="/logout"
+            to="/"
             className="text-noir hover:underline text-xl"
-            onClick={closeMenuOnClick}
+            onClick={mobileLogout}
           >
             Logout
           </NavLink>
@@ -145,7 +154,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="mr-6">
-              <NavLink to="/browse" className="text-noir hover:underline">
+              <NavLink to="/articles" className="text-noir hover:underline">
                 Browse
               </NavLink>
             </li>
@@ -201,7 +210,7 @@ export default function Navbar() {
             </NavLink>
             <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
-              to="/browse"
+              to="/articles"
               className="text-noir hover:underline text-xl"
               onClick={closeMenuOnClick}
             >

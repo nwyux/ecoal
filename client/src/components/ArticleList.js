@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios, { all } from 'axios';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import useCookie from 'react-use-cookie';
 // import './Articles.css';
 
@@ -22,40 +22,32 @@ export default function Articles() {
     getData();
   }, []);
 
-  function showArticlesLogged(title, content, leadStory, thumbnailURL, id) {
+  function showArticlesLogged(title, content, leadStory, thumbnailURL, id, created_at) {
 
     if (content == 1) {
     return (
-      <div className=''>
-        <h3>{title}</h3>
-        <img src={'http://localhost:8000/'+thumbnailURL} alt={title} />
-        <p className="articletext">{leadStory}</p>
-
-        <div className="abovetext">
-          <div className="blur"></div>
-          <a className="readmore" href={"/article/" + id}>
-            <p>Read more</p>
-            <button className='readmorebutton'><i className='bx bx-down-arrow-alt' ></i></button>
-          </a>
+      <div className='flex flex-col border-2 border-gray-200 relative max-w-lg max-h-56'>
+            <NavLink className="readmore" to={"/article/" + id}>
+          <h3 className='font-bold text-xl absolute bottom-0'>{title}</h3>
+          <img className='w-52 object-cover' src={'http://localhost:8000/'+thumbnailURL} alt={title} />
+          {/* <p className="articletext text-sm">{created_at}</p> */}
+  
+            </NavLink>
         </div>
-      </div>
     )
     }; 
     
     if (id == '1') {
       return (
-        <div className='flex bg-vert'>
-          <h3>{title}</h3>
-          <img src={'http://localhost:8000/'+thumbnailURL} alt={title} />
-          <p className="articletext">{leadStory}</p>
-  
-          <div className="abovetext">
-            <div className="blur"></div>
-            <a className="readmore" href={"/article/" + id}>
-              <p>Read more</p>
-              <button className='readmorebutton'><i className='bx bx-down-arrow-alt' ></i></button>
-            </a>
+        <div className='flex flex-col border-2 rounded-3xl border-gray-200 relative w-80 sm:w-96 max-h-34'>
+            <NavLink className="hover:" to={"/article/" + id}>
+          <h3 className='font-bold text-xl absolute bottom-2 left-2'>{title}</h3>
+          <div className='flex max-w-80 sm:max-w-96 max-h-36'>
+          <img className='w-full object-cover rounded-3xl' src={'http://localhost:8000/'+thumbnailURL} alt={title} />
           </div>
+          {/* <p className="articletext text-sm">{created_at}</p> */}
+  
+            </NavLink>
         </div>
       )
     }
@@ -64,21 +56,24 @@ export default function Articles() {
   function showArticlesNotLogged(title, thumbnailURL, leadStory, id) {
 
       return (
-        <div className='flex flex-row-reverse max-w-lg'>
-        <img src={'http://localhost:8000/'+thumbnailURL} alt={title} className='w-full'/>
-        <h3>{title}</h3>
-      </div>
+        <div className='flex flex-col border-2 rounded-3xl border-gray-200 relative w-80 sm:w-96 max-h-34'>
+          <h3 className='font-bold text-xl absolute bottom-2 left-2'>{title}</h3>
+          <div className='flex max-w-80 sm:max-w-96 max-h-36'>
+          <img className='w-full object-cover rounded-3xl' src={'http://localhost:8000/'+thumbnailURL} alt={title} />
+          </div>
+          {/* <p className="articletext text-sm">{created_at}</p> */}  
+        </div>
       )
   }
 
   function needLogin() {
     if (userToken === '0'){
     return (
-      <div className='gologin'>
-        <div>
-        <h3>Log in or register to read more</h3>
-        <a href="/login/"><button className='loginbutton'>Log in</button></a>
-        <a href="/register/"><button className='registerbutton'>Register</button></a>
+      <div className=''>
+        <h3 className='font-bold'>Log in or register to read this article</h3>
+        <div className='flex gap-1'>
+        <NavLink to="/login/" className="underline">Log in</NavLink>
+        <NavLink to="/register/" className="underline">Register</NavLink>
         </div>
       </div>
     )
@@ -89,11 +84,12 @@ export default function Articles() {
   function allArticles() {
     if (userToken === '0') {
       return (
-        <div className='flex flex-wrap'>
+        <div className='flex flex-wrap py-2'>
           {data && data.map((article) => {
             return (
-              <div className='flex bg-vert p-6 '>
-                {showArticlesNotLogged(article.title, article.thumbnailURL, article.leadStory, article.id)}
+              <div className='flex flex-col'>
+                {showArticlesNotLogged(article.title, article.thumbnailURL, article.leadStory, article.id, article.created_at)}
+                {needLogin()}
                 </div>
             )
           })}
@@ -101,11 +97,11 @@ export default function Articles() {
       )
     } else {
       return (
-        <div>
+        <div className='flex flex-col'>
           {data && data.map((article) => {
             return (
-              <div className='flex bg-vert'>
-                {showArticlesLogged(article.title, article.leadStory, article.content, article.thumbnailURL, article.id)}
+              <div className='flex rounded-2xl py-3 flex-col'>
+                {showArticlesLogged(article.title, article.leadStory, article.content, article.thumbnailURL, article.id, article.created_at)}
                 </div>
             )
           })}
@@ -121,9 +117,8 @@ export default function Articles() {
   }
 
   return (
-    <div className='container-articles mt-32 flex justify-center items-center'>
+    <div className='container-articles mt-28 flex justify-center items-center'>
       {data && allArticles()}
-      {needLogin()}
     </div>
   )
 }
