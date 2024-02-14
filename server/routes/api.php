@@ -27,7 +27,7 @@ Route::get('/articles', function () {
 });
 
 // Create an article
-Route::post('/article', function(Request $request) {
+/*Route::post('/article', function(Request $request) {
     
     $f = $request->file('thumbnail')->hashName();
     $request->file('thumbnail')->move("upload", $f);
@@ -41,7 +41,7 @@ Route::post('/article', function(Request $request) {
         "leadStory" => $request->input('leadStory')
     ]);
 
-    /*$tags = [];*/
+    
     $tmp = $request->input('tags');
     $tags = explode(",", $tmp);
     foreach ($tags as $tag ) {
@@ -51,7 +51,8 @@ Route::post('/article', function(Request $request) {
 
 
     return response($article, 201);
-});
+});*/
+Route::post('/article', [ArticlesController::class, 'create']);
 
 //Get a specific article
 Route::get('/article/{id}', function($id){

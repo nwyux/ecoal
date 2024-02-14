@@ -14,13 +14,14 @@ class ArticlesController extends Controller
 
     public function create(Request $request){
     
-    $f = $request->file('thumbnail')->hashName();
-    $request->file('thumbnail')->move("upload", $f);
+
+        $path = $request->file('thumbnailURL')->store('public');
+        return response($path, 201);
 
     $article = Article::create([
         "title" => $request->input('title'),
         "content" => $request->input('content'),
-        "thumbnailURL" => 'upload/'.$f,
+        "thumbnailURL" => $path,
         "mediaType" => $request->input('mediaType'),
         "mediaURL" => $request->input('mediaURL'),
         "leadStory" => $request->input('leadStory')
