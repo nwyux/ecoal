@@ -36,12 +36,12 @@ export default function Login() {
     if (logged)
         window.location.href = '/'
     return (
-        <div className="flex h-screen relative justify-center items-center">
-            <div className='flex absolute top-24 z-20 justify-center bg-vert rounded-full items-center mb-4'>
+        <div className="loginBg overflow-hidden flex h-screen relative justify-center items-center">
+            <div className='flex absolute top-64 z-20 justify-center bg-vert rounded-full items-center mb-4'>
                 <NavLink to='/login' className="text-2xl font-semibold bg-vertfonce rounded-full py-4 px-11 text-blanc">Login</NavLink>
                 <NavLink to='/register' className="text-2xl font-semibold py-4 px-6 text-vertfonce">Register</NavLink>
               </div>
-              <div className="w-full p-4 bg-blanc absolute top-24 h-screen rounded-3xl">
+              <div className="w-full sm:max-w-2xl p-4 bg-blanc absolute top-64 h-screen rounded-[45px]">
                 <form onSubmit={login} className='mt-24'>
                   <input
                         type="email"

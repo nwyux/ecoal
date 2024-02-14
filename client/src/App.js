@@ -11,7 +11,7 @@ import ArticleList from "./components/ArticleList";
 
 function App() {
   return (
-    <>
+    <div className="overflow-hidden">
       <Navbar />
 
       <Routes>
@@ -24,7 +24,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </>
+    </div>
   );
 }
 

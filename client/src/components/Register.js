@@ -43,12 +43,12 @@ export default function Register() {
     window.location.href = '/'
 
     return (
-        <div className="flex h-screen relative justify-center items-center">
-            <div className='flex absolute top-24 z-20 justify-center bg-vert rounded-full items-center mb-4'>
+        <div className="loginBg overflow-hidden flex h-screen relative justify-center items-center">
+            <div className='flex absolute top-64 z-20 justify-center bg-vert rounded-full items-center mb-4'>
                 <NavLink to='/login' className="text-2xl font-semibold text-vertfonce rounded-full py-4 px-11 ">Login</NavLink>
                 <NavLink to='/register' className="text-2xl font-semibold py-4 px-6 bg-vertfonce text-blanc rounded-full">Register</NavLink>
               </div>
-            <div className="w-full p-4 bg-blanc absolute top-24 h-screen rounded-3xl">
+            <div className="w-full sm:max-w-2xl p-4 bg-blanc absolute top-64 h-screen rounded-[45px]">
                 <form onSubmit={register} className='mt-24'>
                     <input
                         type="text"
