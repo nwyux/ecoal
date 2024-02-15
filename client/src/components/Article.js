@@ -14,13 +14,14 @@ export default function Article() {
         const response = (await axios.get('http://localhost:8000/api/article/'+id)).data;
         setData(response);
         setLoading(false);
+
       }
     
       useEffect(() => {
         getData();
       }, []);
     
-      function showArticles(title, content, thumbnailURL, mediaURL, mediaType, id) {
+      function showArticles(title, content, thumbnailURL, mediaURL, mediaType, id, created_at) {
 
         if (mediaType === "video") {
           mediaURL = mediaURL.replace("watch?v=", "embed/");
@@ -62,6 +63,12 @@ export default function Article() {
           } 
         }
 
+        function createdAt(created_at) {
+          let date = new Date(created_at);
+          return date.toLocaleDateString();
+        }
+
+
         content = content.replace(/\./g, '. <br> <br>');
 
         return (
@@ -69,6 +76,8 @@ export default function Article() {
             <img className=' py-4 w-96 sm:w-2/4 max-w-4xl m-auto' src={'http://localhost:8000/'+thumbnailURL} alt={title} />
             <h3 className='font-bold text-xl uppercase text-center p-4'>{title}</h3>
             <p className='text-md text-justify mx-4 sm:mx-48' dangerouslySetInnerHTML={{__html: content}}></p>
+
+            <p className='text-center text-xl font-bold mt-4'>{createdAt(created_at)}</p>
           </div>
         )
       }
@@ -85,7 +94,7 @@ export default function Article() {
             </NavLink>
             <h2 className='text-marron text-4xl font-bold'>Article</h2>
           </div>
-            {data && showArticles(data.title, data.content, data.thumbnailURL, data.mediaURL, data.mediaType, data.id)}
+            {data && showArticles(data.title, data.content, data.thumbnailURL, data.mediaURL, data.mediaType, data.id, data.created_at)}
         </div>
     )
 }

@@ -13,6 +13,8 @@ import Browse from "./pages/Browse";
 import Dashboard from "./components/Dashboard";
 import QuestionsAccordeon from "./pages/Questions";
 import Educate from "./pages/Educate";
+import Userpage from "./components/Userpage";
+import Donations from "./components/Donations";
 
 function App() {
   return (
@@ -29,7 +31,9 @@ function App() {
         <Route path="/browse" element={<Browse />} />        
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/educate" element={<Educate/>}/>
+        <Route path="/donations" element={<Donations />} />
         <Route path="/questions" element={<QuestionsAccordeon />} />
+        <Route path="/userpage" element={<Userpage />} />
       </Routes>
 
       <Footer />

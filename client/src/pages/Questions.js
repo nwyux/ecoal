@@ -35,8 +35,8 @@ const AccordionItem = ({ title, content }) => {
 
 const QuestionsAccordeon = () => {
   return (
-    <div className="flex flex-col justify-center items-center mt-28">
-      <h1>Questions and answers.</h1>
+    <div className="flex flex-col justify-center items-center mt-12 min-h-screen">
+      <h1 className='text-marron text-2xl'>Questions and answers.</h1>
       <AccordionItem
         title="Who are we and what is Econimal all about? "
         content="Econimal is an online news outlet dedicated to shedding light on endangered species and environmental issues. We are a team of passionate individuals committed to raising awareness about the challenges facing our planet's ecosystems and the importance of protecting biodiversity."

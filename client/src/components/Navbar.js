@@ -78,6 +78,11 @@ export default function Navbar() {
             </NavLink>
           </li>
           <li className="mr-6">
+            <NavLink to="/userpage" className="text-noir hover:underline">
+              Userpage
+            </NavLink>
+          </li>
+          <li className="mr-6">
             <NavLink to="/" onClick={logout} className="text-noir hover:underline">
               Logout
             </NavLink>
@@ -120,6 +125,14 @@ export default function Navbar() {
           </NavLink>
           <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
           <NavLink
+            to="/userpage"
+            className="text-noir hover:underline text-xl"
+            onClick={closeMenuOnClick}
+          >
+            Userpage
+          </NavLink>
+          <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
+          <NavLink
             to="/"
             className="text-noir hover:underline text-xl"
             onClick={mobileLogout}
@@ -145,8 +158,8 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="mr-6">
-              <NavLink to="/innovations" className="text-noir hover:underline">
-                Innovations
+              <NavLink to="/donations" className="text-noir hover:underline">
+                Donations
               </NavLink>
             </li>
             <li className="mr-6">
@@ -177,10 +190,10 @@ export default function Navbar() {
             ref={menuRef}
             className={`${
               showMenu ? "translate-x-0" : "translate-x-full"
-            } fixed -top-20 right-0 h-full font-alata bg-blanc opacity-95 text-noir w-full max-w-lg flex flex-col justify-center items-center p-6 gap-4 transition-transform duration-200 border-l-2 border-noir`}
+            } fixed -top-0 right-0 min-h-screen font-alata bg-blanc opacity-95 text-noir w-full max-w-lg flex flex-col justify-center items-center p-6 gap-4 transition-transform duration-200 border-l-2 border-noir`}
           >
             <button
-              className="absolute top-28 right-5 text-3xl font-bold"
+              className="absolute top-10 right-5 text-3xl font-bold"
               onClick={toggleMenu}
             >
               <X />
@@ -195,11 +208,11 @@ export default function Navbar() {
             </NavLink>
             <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
-              to="/innovations"
+              to="/donations"
               className="text-noir hover:underline text-xl"
               onClick={closeMenuOnClick}
             >
-              Innovations
+              Donations
             </NavLink>
             <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
