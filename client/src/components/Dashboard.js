@@ -44,8 +44,12 @@ export default function Dashboard() {
 
   const [articles, setArticles] = useState([]);
   const [tags, setTags] = useState([]);
-  const [selectedArticle, setSelectedArticle] = useState("");
-  const [selectedTag, setSelectedTag] = useState("");
+  const [selectedMedia, setSelectedMedia] = useState("Media");
+  const [selectedArticle, setSelectedArticle] = useState("Articles");
+  const [selectedTag, setSelectedTag] = useState("Tags");
+
+  console.log(selectedArticle);
+console.log(selectedTag);
 
   useEffect(() => {
     axios
@@ -116,6 +120,7 @@ export default function Dashboard() {
                 value={type}
                 onChange={(e) => setmediaType(e.target.value)}
               >
+                <option value="Media">Media</option>
                 <option value="image">image</option>
                 <option value="audio">audio</option>
                 <option value="video">video</option>
@@ -201,6 +206,9 @@ export default function Dashboard() {
                 value={selectedArticle}
                 onChange={(e) => setSelectedArticle(e.target.value)}
               >
+                <option value="" key="Articles">
+                    Articles
+                </option>
                 {articles.map((article) => (
                   <option key={article.id} value={article.id}>
                     {article.title}
@@ -218,6 +226,9 @@ export default function Dashboard() {
                 value={selectedTag}
                 onChange={(e) => setSelectedTag(e.target.value)}
               >
+                <option value="" key="Tags">
+                    Tags
+                </option>
                 {tags.map((tag) => (
                   <option key={tag.id} value={tag.id}>
                     {tag.name}
