@@ -52,12 +52,13 @@ export default function Article() {
           } else if (mediaType === "image") {
             return (
               <div className='media'>
-                <img src={mediaURL} alt={title} />
+                <img className=' py-4 w-96 sm:w-2/4 max-w-4xl m-auto' src={'http://localhost:8000/'+mediaURL} alt={title} />
               </div>
             )
           } else if (mediaType === "audio"){
             return (
               <div className='media'>
+                <Audio />
               </div>
             )
           } 
@@ -72,11 +73,12 @@ export default function Article() {
         content = content.replace(/\./g, '. <br> <br>');
 
         return (
-          <div className='relative flex flex-col justify-center'>
+          <div className='relative flex flex-col justify-center items-center'>
             <img className=' py-4 w-96 sm:w-2/4 max-w-4xl m-auto' src={'http://localhost:8000/'+thumbnailURL} alt={title} />
             <h3 className='font-bold text-xl uppercase text-center p-4'>{title}</h3>
             <p className='text-md text-justify mx-4 sm:mx-48' dangerouslySetInnerHTML={{__html: content}}></p>
-
+            <p className='text-center text-xl font-bold mt-4'>Associate media:</p>
+            <Media />
             <p className='text-center text-xl font-bold mt-4'>{createdAt(created_at)}</p>
           </div>
         )
