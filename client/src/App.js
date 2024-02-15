@@ -11,7 +11,7 @@ import ArticleList from "./components/ArticleList";
 import Discover from "./pages/Discover";
 import Browse from "./pages/Browse";
 import Dashboard from "./components/Dashboard";
-import QuestionsAccordeon from "./pages/Questions";
+import Educate from "./pages/Educate";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         <Route path="/discover" element={<Discover />} />
         <Route path="/browse" element={<Browse />} />        
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/questions" element={<QuestionsAccordeon />} />
+        <Route path="/educate" element={<Educate/>}/>
       </Routes>
 
       <Footer />
