@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import useCookie from "react-use-cookie";
 import axios from "axios";
+import tortoise from '../tortoise.png';
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -10,23 +11,22 @@ export default function Navbar() {
   const [token, setUserToken] = useCookie("token", "0");
   const [data, setData] = useState(null);
 
-  async function getUser() {
-    // const response = (
-    //   await axios.get("http://127.0.0.1:8000/api/user", {
-    //     headers: { Authorization: "Bearer " + token },
-    //   })
-    // ).data;
-    // setData(response);
-  }
-
   console.log(token);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
+  function logout() {
+    setUserToken('0');
+  }
+
+  function mobileLogout() {
+    closeMenuOnClick();
+    logout();
+  }
+
   useEffect(() => {
-    getUser();
     const closeMenu = (event) => {
       if (
         showMenu &&
@@ -72,12 +72,12 @@ export default function Navbar() {
       return (
         <ul className="flex text-noir lg:gap-12 font-alata items-center">
           <li className="mr-6">
-            <NavLink to="/user" className="text-noir hover:underline">
-              User page
+            <NavLink to="/dashboard" className="text-noir hover:underline">
+              Dashboard
             </NavLink>
           </li>
           <li className="mr-6">
-            <NavLink to="/logout" className="text-noir hover:underline">
+            <NavLink to="/" onClick={logout} className="text-noir hover:underline">
               Logout
             </NavLink>
           </li>
@@ -111,17 +111,17 @@ export default function Navbar() {
       return (
         <>
           <NavLink
-            to="/user"
+            to="/dashboard"
             className="text-noir hover:underline text-xl"
             onClick={closeMenuOnClick}
           >
-            User page
+            Dashboard
           </NavLink>
           <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
           <NavLink
-            to="/logout"
+            to="/"
             className="text-noir hover:underline text-xl"
-            onClick={closeMenuOnClick}
+            onClick={mobileLogout}
           >
             Logout
           </NavLink>
@@ -132,10 +132,10 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="bg-blanc z-50 text-noir py-4 px-4  sm:px-0 border-b-2 border-noir items-center sticky top-0 left-0 right-0">
-        <div className="hidden container bg-blanc mx-auto md:flex justify-around align-middle items-center">
+      <div className="bg z-50 text-noir py-4 px-4  sm:px-0 items-center absolute top-0 left-0 right-0">
+        <div className="hidden container b mx-auto md:flex justify-around align-middle items-center">
           <Link to="/" className="text-3xl font-archivo">
-            ECONIMAL
+            <img src={tortoise} alt="ECONIMAL" className="w-20" />
           </Link>
           <ul className="flex text-noir lg:gap-12 font-alata items-center">
             <li className="mr-6">
@@ -165,7 +165,7 @@ export default function Navbar() {
         <div className="container mx-auto md:hidden flex justify-between items-center relative">
           <div className="text-noir">
             <Link to="/" className="text-3xl font-archivo">
-              ECONIMAL
+              <img src={tortoise} alt="ECONIMAL" className="w-20" />
             </Link>
           </div>
           <button className="text-3xl font-bold" onClick={toggleMenu}>

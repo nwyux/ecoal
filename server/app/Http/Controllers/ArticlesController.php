@@ -14,24 +14,18 @@ class ArticlesController extends Controller
 
     public function create(Request $request){
     
-    $f = $request->file('thumbnail')->hashName();
-    $request->file('thumbnail')->move("upload", $f);
 
+        $path = $request->file('thumbnailURL')->store('public');
+        $path2 = $request->file('mediaURL')->store('public');
+        
     $article = Article::create([
         "title" => $request->input('title'),
         "content" => $request->input('content'),
-        "thumbnailURL" => 'upload/'.$f,
+        "thumbnailURL" => $path,
         "mediaType" => $request->input('mediaType'),
-        "mediaURL" => $request->input('mediaURL'),
+        "mediaURL" => $path2,
         "leadStory" => $request->input('leadStory')
     ]);
-
-    $tmp = $request->input('tags');
-    $tags = explode(",", $tmp);
-    foreach ($tags as $tag ) {
-        $newTag = Tag::find($tag);
-        $article->tags()->attach([$newTag->id]);
-    }
 
 
     return response($article, 201);
