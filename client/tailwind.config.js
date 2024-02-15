@@ -35,6 +35,7 @@ module.exports = {
         lightyellow: '#FFDC61',
       },
       fontFamily: {
+        sen: ['Sen', 'sans-serif'],
         sans: ['Roboto', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
         archivo: ['Archivo Black'],

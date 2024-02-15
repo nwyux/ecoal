@@ -14,7 +14,7 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-    <div className="overflow-hidden bg-blanc">
+    <div className="overflow-hidden bg-blanc min-h-[100vh]">
       <Navbar />
 
       <Routes>

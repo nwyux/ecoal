@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Sen';
+    src: url('https://fonts.googleapis.com/css?family=Sen');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sen', sans-serif;
+}
+
 #footerID{
     display: flex;
     flex-direction: column;

@@ -31,7 +31,7 @@ export default function Search() {
 
   function showArticlesLogged(title, content, leadStory, thumbnailURL, id) {
     return (
-      <div className='flex flex-col border-2 rounded-3xl border-gray-200 relative w-80 sm:w-96 max-h-34' key={id}>
+      <div className='flex flex-col border-2 rounded-3xl border-gray-200 relative w-80 sm:w-96 max-h-34 my-6' key={id}>
         <NavLink to={"/article/" + id} className="hover:underline">
           <h3 className='font-bold text-xl absolute bottom-2 left-2'>{title}</h3>
           <div className='flex max-w-80 sm:max-w-96 max-h-36'>
@@ -44,7 +44,7 @@ export default function Search() {
 
   function showArticlesNotLogged(title, thumbnailURL, leadStory, id) {
     return (
-      <div className='flex flex-col border-2 rounded-3xl border-gray-200 relative w-80 sm:w-96 max-h-34' key={id}>
+      <div className='flex flex-col border-2 rounded-3xl border-gray-200 relative w-80 sm:w-96 max-h-34 my-6' key={id}>
         <h3 className='font-bold text-xl absolute bottom-2 left-2'>{title}</h3>
         <div className='flex max-w-80 sm:max-w-96 max-h-36'>
           <img className='w-full object-cover rounded-3xl' src={`http://localhost:8000/${thumbnailURL}`} alt={title} />
