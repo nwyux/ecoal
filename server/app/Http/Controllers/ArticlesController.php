@@ -15,15 +15,15 @@ class ArticlesController extends Controller
     public function create(Request $request){
     
 
-        $path = $request->file('thumbnailURL')->store('public');
-        $path2 = $request->file('mediaURL')->store('public');
+        $path = $request->file('thumbnailURL')->store();
+        $path2 = $request->file('mediaURL')->store();
         
     $article = Article::create([
         "title" => $request->input('title'),
         "content" => $request->input('content'),
-        "thumbnailURL" => $path,
+        "thumbnailURL" => "storage/" . $path,
         "mediaType" => $request->input('mediaType'),
-        "mediaURL" => $path2,
+        "mediaURL" => "storage/" . $path2,
         "leadStory" => $request->input('leadStory')
     ]);
 

@@ -121,13 +121,6 @@ Route::get('/link/article/{article_id}/tag/{tag_id}', function($article_id, $tag
     $article->tags()->attach([$tag->id]);
 });
 
-Route::post('/link', function(Request $request){
-    $article = Article::findOrFail($request->input('article_id'));
-    $tag = Tag::findOrFail($request->input('tag_id'));
-    $article->tags()->attach([$tag->id]);
-});
-
-
 //Unlink a tag to an article
 Route::get('/unlink/article/{article_id}/tag/{tag_id}', function($article_id, $tag_id){
     $article = Article::findOrFail($article_id);
