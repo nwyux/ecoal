@@ -24,7 +24,8 @@ function App() {
         <Route path="/article" element={<ArticleList />} />
         <Route path="/article/:id" element={<Article />} />
         <Route path="/discover" element={<Discover />} />
-        <Route path="/browse" element={<Browse />} />        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/browse" element={<Browse />} />        
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
       <Footer />

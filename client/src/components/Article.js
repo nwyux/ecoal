@@ -80,7 +80,7 @@ export default function Article() {
     return (
         <div className='mt-28 mb-8 bg-blanc'>
           <div className='flex flex-col mx-2 sm:mx-16 gap-2'>
-            <NavLink to='/articles' className='-ml-1 w-24'>
+            <NavLink to='/browse' className='-ml-1 w-24'>
             <ArrowLeft size={48} className='text-marron' />
             </NavLink>
             <h2 className='text-marron text-4xl font-bold'>Educate</h2>

@@ -72,8 +72,8 @@ export default function Navbar() {
       return (
         <ul className="flex text-noir lg:gap-12 font-alata items-center">
           <li className="mr-6">
-            <NavLink to="/user" className="text-noir hover:underline">
-              User page
+            <NavLink to="/dashboard" className="text-noir hover:underline">
+              Dashboard
             </NavLink>
           </li>
           <li className="mr-6">
@@ -111,11 +111,11 @@ export default function Navbar() {
       return (
         <>
           <NavLink
-            to="/user"
+            to="/dashboard"
             className="text-noir hover:underline text-xl"
             onClick={closeMenuOnClick}
           >
-            User page
+            Dashboard
           </NavLink>
           <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
           <NavLink
@@ -149,7 +149,7 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="mr-6">
-              <NavLink to="/articles" className="text-noir hover:underline">
+              <NavLink to="/discover" className="text-noir hover:underline">
                 Discover
               </NavLink>
             </li>
@@ -202,7 +202,7 @@ export default function Navbar() {
             </NavLink>
             <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
-              to="/articles"
+              to="/discover"
               className="text-noir hover:underline text-xl"
               onClick={closeMenuOnClick}
             >
