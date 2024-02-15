@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Dashboard() {
 
@@ -32,11 +32,45 @@ export default function Dashboard() {
         formArticle.append("thumbnailURL", tURL);
         formArticle.append("mediaURL", cURL);
         formArticle.append("leadStory", leadStory);
-        axios.post("http://127.0.0.1:8000/api/article", formArticle)
+
+
+        try {
+            const response = await axios.post("http://127.0.0.1:8000/api/article", formArticle);
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
     }
+
+
+    const [articles, setArticles] = useState([]);
+    const [tags, setTags] = useState([]);
+    const [selectedArticle, setSelectedArticle] = useState('');
+    const [selectedTag, setSelectedTag] = useState('');
+
+    useEffect(() => {
+        axios.get("http://127.0.0.1:8000/api/articles")
+            .then(response => setArticles(response.data))
+            .catch(error => console.error("Error fetching articles:", error));
+
+        axios.get("http://127.0.0.1:8000/api/tags")
+            .then(response => setTags(response.data))
+            .catch(error => console.error("Error fetching tags:", error));
+    }, []);
+
+    async function handleLinking(e) {
+        e.preventDefault();
+        axios.post("http://127.0.0.1:8000/api/link", {
+            article_id: selectedArticle,
+            tag_id: selectedTag
+        })
+    }
+
+
 
     return (
         <>
+            <h1>Créer un tag</h1>
             <form onSubmit={handleTag}>
                 <label>
                     Tag :
@@ -45,6 +79,9 @@ export default function Dashboard() {
                 <input type="submit" value="Submit" />
             </form>
 
+            <br></br>
+
+            <h1>Créer un article</h1>
             <form onSubmit={handleArticle}>
                 <label>
                     Title:
@@ -71,6 +108,27 @@ export default function Dashboard() {
                     <input type="file" onChange={(e) => setContentUrl(e.target.files[0])} />
                 </label>
                 <input type="submit" value="Submit" />
+            </form>
+            <br></br>
+            <h1>Lier un tag avec un article</h1>
+            <form onSubmit={handleLinking}>
+                <label>
+                    Sélectionner un article :
+                    <select value={selectedArticle} onChange={(e) => setSelectedArticle(e.target.value)}>
+                        {articles.map(article => (
+                            <option key={article.id} value={article.id}>{article.title}</option>
+                        ))}
+                    </select>
+                </label>
+                <label>
+                    Sélectionner un tag :
+                    <select value={selectedTag} onChange={(e) => setSelectedTag(e.target.value)}>
+                        {tags.map(tag => (
+                            <option key={tag.id} value={tag.id}>{tag.name}</option>
+                        ))}
+                    </select>
+                </label>
+                <input type="submit" value="Lier" />
             </form>
         </>
 
