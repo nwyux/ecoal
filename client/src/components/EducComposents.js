@@ -12,12 +12,12 @@ export default function EducComposents() {
     }, []);
 
     return (
-        <div className="mb-4 min-h-screen flex justify-center items-center mt-20">
-            <div className="w-11/12">
-                <h2 className='py-3 my-2 border-l-2 border-noir px-4 text-lg'>Tips and Tricks</h2>
+        <div className="mb-4 min-h-screen flex justify-center items-center mt-8">
+            <div className="w-11/12 flex flex-col m-auto justify-center items-center">
+                <h2 className='py-3 my-2 border-l-2 border-noir px-4 text-2xl font-bold'>Tips and Tricks</h2>
                 <h3 className='py-1 text-sm'>Are you particularly sensitive to and affected by environmental issues? </h3>
                 <p className='ml-3 text-xs'>On this page you'll find a range of tips and advice for everyday life that can make a big difference!</p>
-                <div className='mt-2'>
+                <div className='mt-2 flex flex-col gap-4 max-w-md m-auto'>
                     <div className='relative mt-4 bg-gradient-to-b from-vert to-transparent shadow-md rounded-md h-20 flex items-center'>
                         <h1 className='text-xs max-w-xs flex-grow pr-4 ml-24'>Use a reusable bottle or water bottle instead of a single-use plastic bottle.</h1>
 

@@ -11,6 +11,7 @@ import ArticleList from "./components/ArticleList";
 import Discover from "./pages/Discover";
 import Browse from "./pages/Browse";
 import Dashboard from "./components/Dashboard";
+import QuestionsAccordeon from "./pages/Questions";
 import Educate from "./pages/Educate";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/browse" element={<Browse />} />        
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/educate" element={<Educate/>}/>
+        <Route path="/questions" element={<QuestionsAccordeon />} />
       </Routes>
 
       <Footer />
