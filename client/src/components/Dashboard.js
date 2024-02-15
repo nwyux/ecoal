@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import { redirect } from 'react-router-dom'
 
 export default function Dashboard() {
 
@@ -60,10 +61,7 @@ export default function Dashboard() {
 
     async function handleLinking(e) {
         e.preventDefault();
-        axios.post("http://127.0.0.1:8000/api/link", {
-            article_id: selectedArticle,
-            tag_id: selectedTag
-        })
+        axios.get('http://127.0.0.1:8000/api/link/article/' + selectedArticle + '/tag/' + selectedTag)
     }
 
 
