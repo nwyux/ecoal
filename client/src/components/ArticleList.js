@@ -17,9 +17,9 @@ export default function Articles() {
         let url = 'http://localhost:8000/api/articles/';
 
         if (selectedTag) {
-          url += `?tag=${selectedTag}`;
+          url += `tag/${selectedTag}`;
         }
-
+        console.log(url)
         const response = await axios.get(url);
         setData(response.data);
       } catch (error) {
@@ -103,7 +103,7 @@ export default function Articles() {
         <select name="tags" id="tags" onChange={(e) => setSelectedTag(e.target.value)}>
           <option value="" key="all">All</option>
           {tags && tags.map((tag) => (
-            <option value={tag.name} key={tag.id} onChange={(e) => setSelectedTag(e.target.value)}>{tag.name}</option>
+            <option value={tag.id} key={tag.id} onChange={(e) => setSelectedTag(e.target.value)}>{tag.name}</option>
           ))}
         </select>
       </div>
