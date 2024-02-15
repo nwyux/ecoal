@@ -10,6 +10,7 @@ import Login from "./components/Login";
 import ArticleList from "./components/ArticleList";
 import Discover from "./pages/Discover";
 import Browse from "./pages/Browse";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -20,10 +21,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/articles" element={<ArticleList />} />
+        <Route path="/article" element={<ArticleList />} />
         <Route path="/article/:id" element={<Article />} />
         <Route path="/discover" element={<Discover />} />
-        <Route path="/browse" element={<Browse />} />
+        <Route path="/browse" element={<Browse />} />        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
       <Footer />
