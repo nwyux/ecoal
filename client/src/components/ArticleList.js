@@ -98,7 +98,7 @@ export default function Articles() {
 
   return (
     <div className="search min-h-screen flex flex-col mt-28 m-auto items-center">
-      <h2 className="text-marron font-bold text-3xl">Discover articles by categories</h2>
+      <h2 className="text-marron font-bold text-center text-3xl">Discover articles by categories</h2>
       <div className="flex flex-wrap justify-center gap-2">
         <select name="tags" id="tags" onChange={(e) => setSelectedTag(e.target.value)} className="w-72 sm:w-80 focus:outline-none bg-marron text-blanc bg-opacity-60 p-1 shadow-xl rounded-lg mt-4">
           <option value="" key="all">All</option>

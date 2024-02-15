@@ -126,7 +126,7 @@ export default function Index() {
     return (
       <div>
         <Splide
-          className="w-[450px] flex items-center py-6 justify-center"
+          className="w-[430px] flex items-center py-6 justify-center"
           options={{
             type: "loop",
             focus: "center",
