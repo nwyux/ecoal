@@ -66,7 +66,7 @@ export default function Article() {
 
         return (
           <div className='relative flex flex-col justify-center'>
-            <img className='opacity-65 py-4 w-96 sm:w-2/4 max-w-4xl m-auto' src={'http://localhost:8000/'+thumbnailURL} alt={title} />
+            <img className=' py-4 w-96 sm:w-2/4 max-w-4xl m-auto' src={'http://localhost:8000/'+thumbnailURL} alt={title} />
             <h3 className='font-bold text-xl uppercase text-center p-4'>{title}</h3>
             <p className='text-md text-justify mx-4 sm:mx-48' dangerouslySetInnerHTML={{__html: content}}></p>
           </div>
@@ -83,7 +83,7 @@ export default function Article() {
             <NavLink to='/browse' className='-ml-1 w-24'>
             <ArrowLeft size={48} className='text-marron' />
             </NavLink>
-            <h2 className='text-marron text-4xl font-bold'>Educate</h2>
+            <h2 className='text-marron text-4xl font-bold'>Article</h2>
           </div>
             {data && showArticles(data.title, data.content, data.thumbnailURL, data.mediaURL, data.mediaType, data.id)}
         </div>

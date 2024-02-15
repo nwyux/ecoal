@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: 'Sen';
     src: url('https://fonts.googleapis.com/css?family=Sen');
@@ -8,6 +12,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Sen', sans-serif;
+}
+
+@layer components{
+    .loginBg{
+        background-image: url('../moutain.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }
 
 #footerID{

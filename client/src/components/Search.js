@@ -31,7 +31,7 @@ export default function Search() {
 
   function showArticlesLogged(title, content, leadStory, thumbnailURL, id) {
     return (
-      <div className='flex flex-col border-2 rounded-3xl border-gray-200 relative w-80 sm:w-96 max-h-34 my-6' key={id}>
+      <div className='flex flex-col hover:scale-105 transition-all duration-200 border-2 rounded-3xl border-gray-200 relative w-80 sm:w-96 max-h-34 my-6' key={id}>
         <NavLink to={"/article/" + id} className="hover:underline">
           <h3 className='font-bold text-xl absolute bottom-2 left-2'>{title}</h3>
           <div className='flex max-w-80 sm:max-w-96 max-h-36'>
@@ -83,10 +83,10 @@ export default function Search() {
   }
 
   return (
-    <div className="search mt-28 flex flex-col justify-center m-auto items-center">
+    <div className="search min-h-screen flex flex-col mt-28 m-auto items-center">
       <h2 className="text-marron font-bold text-3xl">Browse through all the articles</h2>
-      <label htmlFor="search">Search</label>
-      <input type="text" value={search} onChange={handleChange} />
+      <label htmlFor="search" className="mt-6">Search</label>
+      <input className="w-72 sm:w-80 focus:outline-none bg-[rgb(172,185,146)] bg-opacity-60 p-1 shadow-xl rounded-lg" type="text" value={search} onChange={handleChange} />
       <div className='container-articles'>
         {loading ? <p>Loading...</p> : allArticles()}
       </div>

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import useCookie from "react-use-cookie";
 import axios from "axios";
 import tortoise from '../tortoise.png';
+import logo from '../logo_desktop.png';
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -133,9 +134,9 @@ export default function Navbar() {
   return (
     <>
       <div className="bg z-50 text-noir py-4 px-4  sm:px-0 items-center absolute top-0 left-0 right-0">
-        <div className="hidden container b mx-auto md:flex justify-around align-middle items-center">
+        <div className="hidden md:border-b-2 py-3 md:border-noir container b mx-auto md:flex justify-around align-middle items-center">
           <Link to="/" className="text-3xl font-archivo">
-            <img src={tortoise} alt="ECONIMAL" className="w-20" />
+            <img src={logo} alt="ECONIMAL" className="w-40" />
           </Link>
           <ul className="flex text-noir lg:gap-12 font-alata items-center">
             <li className="mr-6">
@@ -176,10 +177,10 @@ export default function Navbar() {
             ref={menuRef}
             className={`${
               showMenu ? "translate-x-0" : "translate-x-full"
-            } fixed top-0 right-0 h-full font-alata bg-blanc opacity-95 text-noir w-full max-w-lg flex flex-col justify-center items-center p-6 gap-4 transition-transform duration-200 border-l-2 border-noir`}
+            } fixed -top-20 right-0 h-full font-alata bg-blanc opacity-95 text-noir w-full max-w-lg flex flex-col justify-center items-center p-6 gap-4 transition-transform duration-200 border-l-2 border-noir`}
           >
             <button
-              className="absolute top-5 right-5 text-3xl font-bold"
+              className="absolute top-28 right-5 text-3xl font-bold"
               onClick={toggleMenu}
             >
               <X />
