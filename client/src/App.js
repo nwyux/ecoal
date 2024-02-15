@@ -8,11 +8,13 @@ import Home from "./pages/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import ArticleList from "./components/ArticleList";
+import Discover from "./pages/Discover";
+import Browse from "./pages/Browse";
 import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-    <>
+    <div className="overflow-hidden bg-blanc">
       <Navbar />
 
       <Routes>
@@ -21,11 +23,13 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/article" element={<ArticleList />} />
         <Route path="/article/:id" element={<Article />} />
+        <Route path="/discover" element={<Discover />} />
+        <Route path="/browse" element={<Browse />} />        
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
 
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -43,36 +43,36 @@ export default function Register() {
     window.location.href = '/'
 
     return (
-        <div className="flex h-screen relative justify-center items-center">
-            <div className='flex absolute top-24 z-20 justify-center bg-vert rounded-full items-center mb-4'>
-                <NavLink to='/login' className="text-2xl font-semibold text-vertfonce rounded-full py-4 px-11 ">Login</NavLink>
-                <NavLink to='/register' className="text-2xl font-semibold py-4 px-6 bg-vertfonce text-blanc rounded-full">Register</NavLink>
+        <div className="loginBg overflow-hidden flex h-screen relative justify-center items-center">
+            <div className='flex absolute top-64 z-20 justify-center bg-vert sm:bg-transparent rounded-full items-center mb-4'>
+                <NavLink to='/login' className="text-2xl sm:hidden font-semibold py-4 px-6 text-vertfonce">Login</NavLink>
+                <NavLink to='/register' className="text-2xl sm:-mt-14 sm:text-4xl sm:bg-transparent font-semibold bg-vertfonce rounded-full py-4 px-11 text-blanc">Register</NavLink>
               </div>
-            <div className="w-full p-4 bg-blanc absolute top-24 h-screen rounded-3xl">
+              <div className="w-full sm:max-w-2xl p-4 bg-blanc sm:backdrop-blur-sm sm:border-2 sm:border-blanc sm:top-48 sm:bg-transparent absolute top-64 h-screen rounded-[45px]">
                 <form onSubmit={register} className='mt-24'>
                     <input
                         type="text"
                         placeholder="Name"
-                        className="w-full p-3 shadow-xl mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
+                        className="w-full sm:bakcdrop-blur-sm sm:bg-[rgb(172,185,146)] sm:bg-opacity-70 shadow-xl p-3 mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
                     <input
                         type="email"
                         placeholder="Email"
-                        className="w-full p-3 shadow-xl mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
+                        className="w-full sm:bakcdrop-blur-sm sm:bg-[rgb(172,185,146)] sm:bg-opacity-70 shadow-xl p-3 mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
                         type="password"
                         placeholder="Password"
-                        className="w-full p-2 shadow-2xl mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
+                        className="w-full sm:bakcdrop-blur-sm sm:bg-[rgb(172,185,146)] sm:bg-opacity-70 shadow-xl p-3 mb-6 bg-vert text-vertfonce rounded-xl placeholder:text-vertfonce placeholder:text-xl placeholder:font-bold"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <button
-                    className="w-full p-3 mt-6 bg-vertfonce shadow-2xl text-blanc rounded-xl font-bold"
+                    className="w-full p-3 mt-6 bg-vertfonce sm:bg-marron shadow-2xl text-blanc rounded-xl font-bold"
                     onClick={register}
                         disabled={loading}
                     >

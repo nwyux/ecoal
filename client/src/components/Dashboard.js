@@ -11,6 +11,8 @@ export default function Dashboard() {
         axios.post("http://127.0.0.1:8000/api/tag/create", {
             name: name
         })
+
+        console.log(name);
     }
 
 
@@ -68,6 +70,7 @@ export default function Dashboard() {
 
     return (
         <>
+        <div className="flex flex-col items-center mt-36">
             <h1>Créer un tag</h1>
             <form onSubmit={handleTag}>
                 <label>
@@ -128,6 +131,7 @@ export default function Dashboard() {
                 </label>
                 <input type="submit" value="Lier" />
             </form>
+        </div>
         </>
 
 
