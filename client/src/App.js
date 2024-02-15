@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import ArticleList from "./components/ArticleList";
+import Discover from "./pages/Discover";
+import Browse from "./pages/Browse";
 
 function App() {
   return (
@@ -20,7 +22,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/articles" element={<ArticleList />} />
         <Route path="/article/:id" element={<Article />} />
-
+        <Route path="/discover" element={<Discover />} />
+        <Route path="/browse" element={<Browse />} />
       </Routes>
 
       <Footer />

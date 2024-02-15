@@ -149,12 +149,12 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li className="mr-6">
-              <NavLink to="/discover" className="text-noir hover:underline">
+              <NavLink to="/articles" className="text-noir hover:underline">
                 Discover
               </NavLink>
             </li>
             <li className="mr-6">
-              <NavLink to="/articles" className="text-noir hover:underline">
+              <NavLink to="/browse" className="text-noir hover:underline">
                 Browse
               </NavLink>
             </li>
@@ -202,7 +202,7 @@ export default function Navbar() {
             </NavLink>
             <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
-              to="/discover"
+              to="/articles"
               className="text-noir hover:underline text-xl"
               onClick={closeMenuOnClick}
             >
@@ -210,7 +210,7 @@ export default function Navbar() {
             </NavLink>
             <hr className="w-1/5 bg-noir block h-0.5 opacity-40" />
             <NavLink
-              to="/articles"
+              to="/browse"
               className="text-noir hover:underline text-xl"
               onClick={closeMenuOnClick}
             >

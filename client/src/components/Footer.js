@@ -4,7 +4,7 @@ import { Twitter, Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className='footer z-90 static bottom-0 gap-2 text-lg w-full bg-marron flex justify-center text-white text-center py-4'>
+    <div className='footer z-90 static bottom-0 gap-2 text-lg w-full bg-marron flex flex-col sm:flex-row justify-center text-white text-center py-4'>
         <NavLink to="/">About</NavLink>
         <hr className="w-screen bg-noir block h-0.5 opacity-40" />
         <NavLink to="/">Contact</NavLink>
