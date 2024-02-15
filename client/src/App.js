@@ -11,7 +11,7 @@ import ArticleList from "./components/ArticleList";
 import Discover from "./pages/Discover";
 import Browse from "./pages/Browse";
 import Dashboard from "./components/Dashboard";
-import ShoesCareAccordion from "./pages/Questions";
+import QuestionsAccordeon from "./pages/Questions";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         <Route path="/discover" element={<Discover />} />
         <Route path="/browse" element={<Browse />} />        
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/questionsandanswers" element={<ShoesCareAccordion />} />
+        <Route path="/questions" element={<QuestionsAccordeon />} />
       </Routes>
 
       <Footer />

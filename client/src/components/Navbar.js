@@ -134,7 +134,7 @@ export default function Navbar() {
   return (
     <>
       <div className="bg z-50 text-noir py-4 px-4  sm:px-0 items-center absolute top-0 left-0 right-0">
-        <div className="hidden md:border-b-2 py-3 md:border-noir container b mx-auto md:flex justify-around align-middle items-center">
+        <div className="hidden md:border-b-[.5px] py-3 md:border-noir container b mx-auto md:flex justify-around align-middle items-center">
           <Link to="/" className="text-3xl font-archivo">
             <img src={logo} alt="ECONIMAL" className="w-40" />
           </Link>

@@ -33,7 +33,7 @@ const AccordionItem = ({ title, content }) => {
   );
 };
 
-const ShoesCareAccordion = () => {
+const QuestionsAccordeon = () => {
   return (
     <div className="flex flex-col justify-center items-center mt-28">
       <h1>Questions and answers.</h1>
@@ -61,4 +61,4 @@ const ShoesCareAccordion = () => {
   );
 };
 
-export default ShoesCareAccordion;
+export default QuestionsAccordeon;
