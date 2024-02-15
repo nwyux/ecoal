@@ -84,7 +84,7 @@ export default function Index() {
   function allArticles() {
     return (
       <div>
-        {data && data.filter(article => article.leadStory == "true").slice(0, 3).map((article) => (
+        {data && data.filter(article => article.leadStory == "1").slice(0, 3).map((article) => (
           <React.Fragment key={article.id}>
             {userToken === '0'
               ? showArticlesNotLogged(article.title, article.thumbnailURL, article.leadStory, article.id)
